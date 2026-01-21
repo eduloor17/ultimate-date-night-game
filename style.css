@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #ffafbd, #ffc3a0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 95%;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: #fce4ec;
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 100px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+button, select {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: #f06292;
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #ec407a;
+}
+
+select {
+  background-color: #f8bbd0;
+  color: #333;
+}
+
+.bonus {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #d81b60;
+}
