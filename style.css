@@ -27,7 +27,7 @@ h1 {
   background: #fce4ec;
   border-radius: 15px;
   padding: 20px;
-  min-height: 100px;
+  min-height: 120px;
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ h1 {
   font-size: 1.1rem;
 }
 
-.controls {
+.buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -68,6 +68,11 @@ button:hover {
 select {
   background-color: #f8bbd0;
   color: #333;
+}
+
+.scoreboard p {
+  font-weight: bold;
+  margin: 3px 0;
 }
 
 .bonus {
