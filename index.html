@@ -11,13 +11,17 @@
     <h1>Ultimate Date Night Game 😋</h1>
 
     <div class="card">
+      <p id="turnText">Current Turn: Lady</p>
       <p id="cardText">Press “Draw Card” to start 😏</p>
       <p id="timerText"></p>
       <p id="rewardText"></p>
     </div>
 
-    <div class="controls">
-      <button id="drawBtn">Draw Card</button>
+    <div class="buttons">
+      <button id="acceptBtn">✅ Accept</button>
+      <button id="rejectBtn">❌ Reject</button>
+      <button id="stopBtn">⏹ Stop Game</button>
+      <button id="drawBtn">🎲 Draw Card</button>
       <select id="categorySelect">
         <option value="all">All</option>
         <option value="flirty">Flirty</option>
@@ -27,8 +31,13 @@
       </select>
     </div>
 
+    <div class="scoreboard">
+      <p>Lady Score: <span id="ladyScore">0</span></p>
+      <p>Boy Score: <span id="boyScore">0</span></p>
+    </div>
+
     <div class="bonus">
-      <p>🎲 Double or Nothing: some cards give extra reward!</p>
+      <p>🎲 Double or Nothing & playful punishments included 😏💃</p>
     </div>
   </div>
 
