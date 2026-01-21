@@ -2,21 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ultimate Date Night Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ultimate Date Night Game 😏💃</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Ultimate Date Night Game 😋</h1>
-    
+
     <div class="card">
       <p id="cardText">Press “Draw Card” to start 😏</p>
       <p id="timerText"></p>
+      <p id="rewardText"></p>
     </div>
 
-    <div class="buttons">
+    <div class="controls">
       <button id="drawBtn">Draw Card</button>
-
       <select id="categorySelect">
         <option value="all">All</option>
         <option value="flirty">Flirty</option>
@@ -26,9 +27,11 @@
       </select>
     </div>
 
-    <div id="rewardText"></div>
+    <div class="bonus">
+      <p>🎲 Double or Nothing: some cards give extra reward!</p>
+    </div>
   </div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
