@@ -13,8 +13,8 @@ fetch('cards.json')
 const drawBtn = document.getElementById('drawBtn');
 const cardText = document.getElementById('cardText');
 const timerText = document.getElementById('timerText');
-const categorySelect = document.getElementById('categorySelect');
 const rewardText = document.getElementById('rewardText');
+const categorySelect = document.getElementById('categorySelect');
 
 function resetDeck() {
   let category = categorySelect.value;
@@ -45,7 +45,7 @@ drawBtn.addEventListener('click', () => {
   usedCards.push(card);
   cardText.textContent = card.text;
 
-  handleRewards(card.category);
+  handleRewards(card);
 });
 
 // Reset deck when category changes
@@ -56,29 +56,39 @@ categorySelect.addEventListener('change', () => {
   timerText.textContent = '';
 });
 
-// Handle mini-reward system & timer
-function handleRewards(category) {
-  switch(category) {
+function handleRewards(card) {
+  let extraTime = 0;
+  let message = '';
+
+  // Random chance for double or nothing
+  let double = Math.random() < 0.25; // 25% chance
+  if (double) {
+    extraTime = 10; // extra seconds
+    message += "🎲 Double or Nothing! ";
+  }
+
+  switch(card.category) {
     case "flirty":
-      rewardText.textContent = "Winner gets a kiss 😘";
+      message += "Winner gets a kiss 😘";
       break;
     case "dirty":
-      rewardText.textContent = "Flirty touch challenge 😏";
+      // playful punishment card example
+      message += "Flirty touch challenge 😏\nOptional: remove a piece of clothing with your mouth 😋";
       break;
     case "romantic":
-      rewardText.textContent = "Extra cuddle for 20 sec 💕";
-      startTimer(20);
+      message += `Extra cuddle for 20 sec ${extraTime ? "+"+extraTime+"s" : ""} 💕`;
+      startTimer(20 + extraTime);
       break;
     case "fun":
-      rewardText.textContent = "Dance like reggaeton star for 20 sec 💃";
-      startTimer(20);
+      message += `Dance like reggaeton star for 20 sec ${extraTime ? "+"+extraTime+"s" : ""} 💃`;
+      startTimer(20 + extraTime);
       break;
-    default:
-      rewardText.textContent = "";
   }
+
+  rewardText.textContent = message;
 }
 
-// Timer function for challenges
+// Timer function
 function startTimer(seconds) {
   let remaining = seconds;
   timerText.textContent = `Time: ${remaining}s`;
@@ -88,8 +98,8 @@ function startTimer(seconds) {
     timerText.textContent = `Time: ${remaining}s`;
     if (remaining <= 0) {
       clearInterval(timer);
-      timerText.textContent = "Time's up! ⏰";
-      rewardText.textContent = "Challenge complete! 😋";
+      timerText.textContent = "⏰ Time's up!";
+      rewardText.textContent += " Challenge complete! 😋";
     }
   }, 1000);
 }
